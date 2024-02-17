@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scraping Application</title>
+</head>
+<body>
+    <h1>Scraping Application</h1>
+    
+    <!-- Dropdown menu for selecting school -->
+    <label for="school">Choose a school:</label>
+    <select id="school">
+        <option value="kennesawstateuniversity">Kennesaw State University</option>
+    </select>
+
+    <!-- Button to trigger scraping request -->
+    <button onclick="startScraping()">Start Scraping</button>
+    
+    <!-- Container to display logs -->
+    <div id="logs"></div>
+
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Include script.js -->
+    <script src="../static/script.js"></script>
+</body>
+</html>
