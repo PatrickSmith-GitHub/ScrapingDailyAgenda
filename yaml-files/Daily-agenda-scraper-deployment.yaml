@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-webapp
+  namespace: flask-webapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flask-webapp
+  template:
+    metadata:
+      labels:
+        app: flask-webapp
+    spec:
+      containers:
+      - name: flask-webapp
+        image:  patricksmithdocker/patrick-smith-daily-agenda-project:0.1.46
+        ports:
+        - containerPort: 5000
+        env:
+        - name: USERNAME_KSU
+          valueFrom:
+            secretKeyRef:
+              name: ksu-basic-auth-secret
+              key: username
+        - name: PASSWORD_KSU
+          valueFrom:
+            secretKeyRef:
+              name: ksu-basic-auth-secret
+              key: password
+
