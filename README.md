@@ -1,5 +1,7 @@
 # Scraping Daily Agenda Project
 This is a project where I built a basic flask webapp for the purposes of learning more about selenium, docker, and kubernetes.
+#Overview of Project
+This project started with a scraping script that I made that scrapes the assignments that are due the next day. I then created a front end that will format the data as well as a button to request for the scraping to be initiated. The communication between everything was facilitated with flask and http requests. I then containerized and deployed the app on kubernetes. I used kubernetes basic auth secrets to pass the username and password to the scraping script as environmental variables and exposed the app using a loadbalancer service.
 # Scraping Script Design
 In the scraping script some challenges I had to overcome were navigating through login screens, as well as traversing shadow doms to access the data I needed for my webapp. This challenged me to learn more about unfamiliar topics in html and to learn much more about selenium than I had ever been forced to in the past such as the intricacies of designing flow control to optimize for both speed and robustness of my script.
 # Webapp Design
